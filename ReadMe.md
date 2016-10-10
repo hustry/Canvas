@@ -3,9 +3,20 @@
 
 Canvas 总结
 
-####目录
+###目录
 
-* Basic usage
+* [Basic usage](https://github.com/hustry/Canvas/tree/master/01-Basic_usage)
+* [Drawing shapes](https://github.com/hustry/Canvas/tree/master/02-draw_shape)
+* [Applying styles and colors](https://github.com/hustry/Canvas/tree/master/03-style-color)
+* [Drawing text](https://github.com/hustry/Canvas/tree/master/04-Text)
+* [Using images](https://github.com/hustry/Canvas/tree/master/05-Images)
+* [Transformations](https://github.com/hustry/Canvas/tree/master/06-Transformations)
+* Compositing and clipping
+* [Basic animations](https://github.com/hustry/Canvas/tree/master/07-Animation)
+* [Pixel manipulation](https://github.com/hustry/Canvas/tree/master/08-Pixel_manipulation)
+* Optimizing the canvas
+
+#### Basic usage
 
 	获取canvas渲染上下文`getContext()`,对于2D图像,使用`getContext('2d')`
 
@@ -16,7 +27,7 @@ Canvas 总结
     }
 	```
 
-* Drawing shapes
+#### Drawing shapes
 
 	**绘制矩形**
 
@@ -64,7 +75,7 @@ Canvas 总结
 	```
 
 
-* Applying styles and colors
+#### Applying styles and colors
 	
 	添加颜色,线型,渐变,模式,阴影.
 
@@ -160,7 +171,7 @@ Canvas 总结
 	shadowColor = color
 	```
 
-* Drawing text
+#### Drawing text
 
 	**绘制text**
 
@@ -192,7 +203,7 @@ Canvas 总结
 	direction = value
 	```
 
-* Using images
+#### Using images
 
 	**获取图片**
 
@@ -224,7 +235,7 @@ Canvas 总结
 
 	截取图片左上(sx,sy),宽度高度为(sWidth,sHeight)的部分绘制到canvas上左上(dx,dy)宽度高度为(dWidth,dHeight)的部分
 
-* Transformations
+#### Transformations
 
 	**状态的保存于恢复**
 
@@ -248,7 +259,7 @@ Canvas 总结
 	scale(x, y)     //x,y 分别是横轴和纵轴的缩放因
 	```
 
-* Compositing and clipping
+#### Compositing and clipping
 
 	**globalCompositeOperation**
 
@@ -277,7 +288,7 @@ Canvas 总结
 	clip()  //创建剪裁路径,与fill()和stroke()同类
 	```
 
-* Basic animations
+#### Basic animations
 
 	**动画的基本步骤**
 
@@ -287,7 +298,7 @@ Canvas 总结
 	* 恢复 canvas 状态
 
 
-* Pixel manipulation
+#### Pixel manipulation
 
 	**ImageData 对象**
 
@@ -305,7 +316,7 @@ Canvas 总结
 		canvas.toDataURL('image/jpeg', quality)
 	```
 
-* Optimizing the canvas
+#### Optimizing the canvas
 
 	* 在离屏canvas上预渲染相似的图形或重复的对象
 	* 避免浮点数的坐标点，用整数取而代之
