@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Demo</title>
+    <style>
+    	body{
+    		margin:0;
+    		padding: 0;
+    	}
+    	canvas{
+    		display: block;
+    		margin:80px auto;
+    		border:2px solid green;
+    	}
+    </style>
+</head>
+
+<body>
+	
+	<canvas id="canvas" width="800" height="600"></canvas>
+	
+<script>
+
+  var ctx = document.getElementById('canvas').getContext('2d');
+  
+  for (var i = 0; i < 6; i++) {
+    for (var j = 0; j < 6; j++) {
+      ctx.fillStyle = 'rgb(' + Math.floor(255 - 42.5 * i) + ',' +
+                       Math.floor(255 - 42.5 * j) + ',0)';
+      ctx.fillRect(j * 25, i * 25, 25, 25);
+    }
+  }
+
+  ctx.translate(300,200);
+
+  for (var i = 0; i < 6; i++) {
+    for (var j = 0; j < 6; j++) {
+      ctx.strokeStyle = 'rgb(0,' + Math.floor(255 - 42.5 * i) + ',' + 
+                       Math.floor(255 - 42.5 * j) + ')';
+      ctx.beginPath();
+      ctx.arc(12.5 + j * 25, 12.5 + i * 25, 10, 0, Math.PI * 2, true);
+      ctx.stroke();
+    }
+  }
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Demo</title>
+    <style>
+    	body{
+    		margin:0;
+    		padding: 0;
+    	}
+    	canvas{
+    		display: block;
+    		margin:80px auto;
+    		border:2px solid green;
+    	}
+    </style>
+</head>
+
+<body>
+	
+	<canvas id="canvas" width="800" height="600"></canvas>
+	
+<script>
+
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+
+    var p = new Path2D("M10 10 h 80 v 80 h -80 Z");
+
+    ctx.stroke(p);
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Demo</title>
+    <style>
+    	body{
+    		margin:0;
+    		padding: 0;
+    	}
+    	canvas{
+    		display: block;
+    		margin:80px auto;
+    		border:2px solid green;
+    	}
+    </style>
+</head>
+
+<body>
+	
+	<canvas id="canvas" width="800" height="600"></canvas>
+	
+<script>
+
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+
+      //添加上下线性渐变
+      var lingrad = ctx.createLinearGradient(0, 0, 0, 150);
+      //起始位置颜色
+      lingrad.addColorStop(0, '#00ABEB');
+      lingrad.addColorStop(0.5, '#fff');
+      lingrad.addColorStop(0.5, '#26C000'); //颜色在中间发生突变
+      //终止位置颜色
+      lingrad.addColorStop(1, '#fff');
+
+      var lingrad2 = ctx.createLinearGradient(0, 50, 0, 95);
+      lingrad2.addColorStop(0.5, '#000');
+      lingrad2.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+      // assign gradients to fill and stroke styles
+      ctx.fillStyle = lingrad;
+      ctx.strokeStyle = lingrad2;
+      
+      //
+      ctx.fillRect(0, 0, 150, 150);
+      ctx.strokeRect(50, 50, 50, 50);
+
+</script>
+</body>
+
+</html>

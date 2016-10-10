@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Demo</title>
+    <style>
+    	body{
+    		margin:0;
+    		padding: 0;
+    	}
+    	canvas{
+    		display: block;
+    		margin:80px auto;
+    		border:2px solid green;
+    	}
+    </style>
+</head>
+
+<body>
+	
+	<canvas id="canvas" width="800" height="600"></canvas>
+	
+<script>
+
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+
+      ctx.translate(75,75);
+
+      for (var i=1;i<6;i++){ // Loop through rings (from inside to out)
+        ctx.save();
+        ctx.fillStyle = 'rgb('+(51*i)+','+(255-51*i)+',255)';
+
+        for (var j=0;j<i*6;j++){ // draw individual dots
+          ctx.rotate(Math.PI*2/(i*6));
+          ctx.beginPath();
+          ctx.arc(0,i*12.5,5,0,Math.PI*2,true);
+          ctx.fill();
+        }
+
+        ctx.restore();
+      }
+
+</script>
+</body>
+
+</html>

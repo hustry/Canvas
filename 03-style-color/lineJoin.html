@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Demo</title>
+    <style>
+    	body{
+    		margin:0;
+    		padding: 0;
+    	}
+    	canvas{
+    		display: block;
+    		margin:80px auto;
+    		border:2px solid green;
+    	}
+    </style>
+</head>
+
+<body>
+	
+	<canvas id="canvas" width="800" height="600"></canvas>
+	
+<script>
+
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+
+      var lineJoin = ['round', 'bevel', 'miter'];
+      ctx.lineWidth = 10;
+      for (var i = 0; i < lineJoin.length; i++) {
+        ctx.lineJoin = lineJoin[i];
+        ctx.beginPath();
+        ctx.moveTo(-5, 5 + i * 40);
+        ctx.lineTo(35, 45 + i * 40);
+        ctx.lineTo(75, 5 + i * 40);
+        ctx.lineTo(115, 45 + i * 40);
+        ctx.lineTo(155, 5 + i * 40);
+        ctx.stroke();
+      }
+
+</script>
+</body>
+
+</html>

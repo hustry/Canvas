@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Demo</title>
+    <style>
+    	body{
+    		margin:0;
+    		padding: 0;
+    	}
+    	canvas{
+    		display: block;
+    		margin:80px auto;
+    		border:2px solid green;
+    	}
+    </style>
+</head>
+
+<body>
+	
+	<canvas id="canvas" width="800" height="600"></canvas>
+	
+<script>
+
+    var ctx = document.getElementById('canvas').getContext('2d');
+    var offset = 0;
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.setLineDash([5, 4]);
+      ctx.lineDashOffset = -offset;
+      ctx.strokeRect(10, 10, 100, 100);
+    }
+
+    function march() {
+      offset++;
+      if (offset > 16) {
+        offset = 0;
+      }
+      draw();
+      setTimeout(march, 2000);
+    }
+
+    march();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Demo</title>
+    <style>
+    	body{
+    		margin:0;
+    		padding: 0;
+    	}
+    	canvas{
+    		display: block;
+    		margin:80px auto;
+    		border:2px solid green;
+    	}
+    </style>
+</head>
+
+<body>
+	
+	<canvas id="canvas" width="800" height="600"></canvas>
+	
+<script>
+
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+
+      var img = new Image();
+      img.onload = function(){
+        for (var i=0;i<4;i++){
+          for (var j=0;j<3;j++){
+            ctx.drawImage(img,j*50,i*38,50,38); //将图片缩放到50X38
+          }
+        }
+      };
+      img.src = 'https://mdn.mozillademos.org/files/5397/rhino.jpg';
+
+</script>
+</body>
+
+</html>

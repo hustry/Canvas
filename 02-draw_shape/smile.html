@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Demo</title>
+    <style>
+    	body{
+    		margin:0;
+    		padding: 0;
+    	}
+        
+    	canvas{
+    		display: block;
+    		margin:80px auto;
+    		border:2px solid green;
+    	}
+    </style>
+</head>
+
+<body>
+	
+	<canvas id="canvas" width="800" height="600"></canvas>
+	
+<script>
+
+  var canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+
+    ctx.beginPath();
+    ctx.arc(75,75,50,0,Math.PI*2,true);     //外部大圆
+    ctx.moveTo(110,75);
+    ctx.arc(75,75,35,0,Math.PI,false);      //口
+    ctx.moveTo(65,65);
+    ctx.arc(60,65,5,0,Math.PI*2,true);      //左眼
+    ctx.moveTo(95,65);
+    ctx.arc(90,65,5,0,Math.PI*2,true);      //右眼
+    ctx.stroke();
+
+
+  }
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Demo</title>
+    <style>
+    	body{
+    		margin:0;
+    		padding: 0;
+    	}
+    	canvas{
+    		display: block;
+    		margin:80px auto;
+    		border:2px solid green;
+    	}
+    </style>
+</head>
+
+<body>
+	
+	<canvas id="canvas" width="800" height="600"></canvas>
+	
+<script>
+
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+
+    ctx.shadowOffsetX = 2;
+  ctx.shadowOffsetY = 2;
+  ctx.shadowBlur = 2;
+  ctx.shadowColor = "rgba(0, 0, 0, 0.5)";
+ 
+  ctx.font = "50px Times New Roman";
+  ctx.fillStyle = "Black";
+  ctx.fillText("Sample String", 50, 50);
+
+</script>
+</body>
+
+</html>

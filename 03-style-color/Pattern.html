@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Demo</title>
+    <style>
+    	body{
+    		margin:0;
+    		padding: 0;
+    	}
+    	canvas{
+    		display: block;
+    		margin:80px auto;
+    		border:2px solid green;
+    	}
+    </style>
+</head>
+
+<body>
+	
+	<canvas id="canvas" width="800" height="600"></canvas>
+	
+<script>
+
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+
+    //使用img作为pattern
+    var img = new Image();
+    img.src = 'https://mdn.mozillademos.org/files/222/Canvas_createpattern.png';
+    img.onload = function() {
+        //两个方向重复
+        var ptrn = ctx.createPattern(img, 'repeat');
+        ctx.fillStyle = ptrn;
+        ctx.fillRect(0, 0, 400, 400);
+  }
+
+</script>
+</body>
+
+</html>

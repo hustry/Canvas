@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Demo</title>
+    <style>
+    	body{
+    		margin:0;
+    		padding: 0;
+    	}
+        
+    	canvas{
+    		display: block;
+    		margin:80px auto;
+    		border:2px solid green;
+    	}
+    </style>
+</head>
+
+<body>
+	
+	<canvas id="canvas" width="800" height="600"></canvas>
+	
+<script>
+
+  var canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+
+    /*绘制三个矩形*/
+    ctx.fillRect(25,25,100,100);
+    ctx.clearRect(45,45,60,60);
+    ctx.strokeRect(50,50,50,50);
+
+  }
+
+</script>
+</body>
+
+</html>
